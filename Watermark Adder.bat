@@ -1,0 +1,1 @@
+for %%a in ("*.jpg") do ffmpeg -i "%%a" -i shahnaz_bright_watermark.png -filter_complex  [1]scale=iw*0.2:-1[wm];[0][wm]overlay=x=(W-w)/2:y=(H-h)/2 "output/%%~na.jpg"
